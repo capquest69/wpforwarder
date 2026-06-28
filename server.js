@@ -16,6 +16,7 @@ const PALABRA_CLAVE = 'alerta';
 
 app.get('/webhook', (req, res) => {
   if (req.query['hub.verify_token'] === VERIFY_TOKEN) {
+    console.log('mgs test ok')
     return res.send(req.query['hub.challenge']);
   }
   res.sendStatus(403);
