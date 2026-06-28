@@ -43,8 +43,8 @@ app.post('/webhook', async (req, res) => {
         );
       }
     }
-    console.log('receibe msg');
   }
+    console.log('receibe msg');
   res.sendStatus(200);
 });
 
