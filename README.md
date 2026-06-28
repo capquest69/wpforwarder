@@ -1,2 +1,0 @@
-# wpforwarder
-babaji whatsapp forwarder
