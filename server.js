@@ -16,7 +16,7 @@ const PALABRA_CLAVE = 'alerta';
 
 app.get('/webhook', (req, res) => {
   if (req.query['hub.verify_token'] === VERIFY_TOKEN) {
-    console.log('mgs test ok')
+    console.log('mgs test ok');
     return res.send(req.query['hub.challenge']);
   }
   res.sendStatus(403);
@@ -32,7 +32,7 @@ app.post('/webhook', async (req, res) => {
     if (esElChat) {
       for (const destino of LISTA) {
         await axios.post(
-          `https://graph.facebook.com/v19.0/${PHONE_ID}/messages`,
+          `https://graph.facebook.com/v25.0/${PHONE_ID}/messages`,
           {
             messaging_product: 'whatsapp',
             to: destino,
@@ -43,6 +43,7 @@ app.post('/webhook', async (req, res) => {
         );
       }
     }
+    console.log('receibe msg');
   }
   res.sendStatus(200);
 });
